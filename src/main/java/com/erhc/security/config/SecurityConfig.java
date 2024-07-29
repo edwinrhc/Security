@@ -25,6 +25,8 @@ public class SecurityConfig {
                 .and()
                 .formLogin().permitAll()
                 .and()
+                .httpBasic()  // aqui nos ayuda a autenticarnos mediante el header de una manera más básica usarlo en postman
+                .and()
                 .build();
     }*/
 
@@ -49,8 +51,6 @@ public class SecurityConfig {
                 .and()
                 .sessionFixation()
                     .migrateSession() // migrateSession - newSession - none
-                .and()
-                .httpBasic()
                 .and()
                 .build();
 
